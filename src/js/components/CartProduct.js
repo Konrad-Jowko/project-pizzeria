@@ -12,6 +12,7 @@ class CartProduct {
     thisCartProduct.priceSingle = menuProduct.priceSingle;
     thisCartProduct.price = thisCartProduct.priceSingle * thisCartProduct.amount;
 
+    console.log(thisCartProduct.params);
 
     thisCartProduct.getElements(element);
     thisCartProduct.initAmountWidget();
@@ -39,6 +40,8 @@ class CartProduct {
     data.priceSingle = thisCartProduct.priceSingle;
     data.name = thisCartProduct.name;
     data.params =   thisCartProduct.params;
+
+
 
     return data;
 

@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pizzeria</title>
+  <script src="https://use.fontawesome.com/720d218ea0.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="vendor/flickity.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -21,6 +23,7 @@
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
         <div class="main-nav">
+          <a href="#home">Home</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
         </div>
@@ -62,6 +65,9 @@
   </header>
 
   <div id="pages">
+    <section id="home">
+      <div class="home-wrapper container"></div>
+    </section>
    <section id="order">
      <div id="product-list" class="product-list container"></div>
    </section>
@@ -69,6 +75,103 @@
      <div class="booking-wrapper container"></div>
    </section>
  </div>
+
+ <script id="template-home-page" type="text/x-handlebars-template">
+
+     <section class= "welcome">
+       <div class= "{{ firstImg }}">
+         <h2>Order online</h2>
+         <h6>Delicious food delivered to Your door</h6>
+       </div>
+       <div class= "{{ secondImg }}">
+         <h2>Book a table<h2>
+         <h6>Make sure You can eat at our table</h6>
+       </div>
+       <div class= "box hours">
+         <h2>  Opening hours:<h2>
+         <h4>TUE-SUN, 12PM-12AM</h4>
+       </div>
+     </section>
+     <section class= "carousel">
+       <div class = "carousel-container">
+         <div class="main-carousel">
+           <div class="carousel-cell">
+             <div class = img-container>
+               <img src="images/assets/pizza-3.jpg" alt="Delicious Pizza!" title="Happy customers!">
+             </div>
+             <div class = text-container>
+               <h3>Delicous food!</h3>
+               <p>
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                 Ut dignissim gravida augue, at pellentesque purus vulputate egestas.
+                 Nunc faucibus metus eget eros lacinia faucibus.
+                 <h5>- Tim Burton</h5>
+               </p>
+             </div>
+           </div>
+           <div class="carousel-cell">
+             <div class = img-container>
+               <img src="images/assets/pizza-3.jpg" alt="Delicious Pizza!" title="Happy customers!">
+             </div>
+             <div class = text-container>
+               <h3>I love this place!</h3>
+               <p>
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                 Ut dignissim gravida augue, at pellentesque purus vulputate egestas.
+                 Nunc faucibus metus eget eros lacinia faucibus.
+                 <h5>- Robert Murdoch</h5>
+               </p>
+             </div>
+           </div>
+           <div class="carousel-cell">
+             <div class = img-container>
+               <img src="images/assets/pizza-3.jpg" alt="Delicious Pizza!" title="Happy customers!">
+             </div>
+             <div class = text-container>
+               <h3>Lovely decorations!</h3>
+               <p>
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                 Ut dignissim gravida augue, at pellentesque purus vulputate egestas.
+                 Nunc faucibus metus eget eros lacinia faucibus.
+                 <h5>- Julie Snow</h5>
+               </p>
+             </div>
+           </div>
+           <div class="carousel-cell">
+             <div class = img-container>
+               <img src="images/assets/pizza-3.jpg" alt="Delicious Pizza!" title="Happy customers!">
+             </div>
+             <div class = text-container>
+               <h3>I wil surely come back!</h3>
+               <p>
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                 Ut dignissim gravida augue, at pellentesque purus vulputate egestas.
+                 Nunc faucibus metus eget eros lacinia faucibus.
+                 <h5>- Michael Mayers
+                 </h5>
+               </p>
+             </div>
+           </div>
+             </div>
+           </div>
+         </div>
+     </section>
+     <section class = "gallery">
+        <div class = "gallery-container">
+           {{#each images}}
+           <div class = "gallery-element">
+             <img class = "gallery-img" src = "{{src}}">
+             <div class = "icons-container">
+               <i class="fas fa-heart"></i>
+               <i class="fas fa-code-branch"></i>
+             </div>
+           </div>
+           {{/each}}
+
+           <h5><a target="_blank" href="https://www.instagram.com/">View more on instagram</a></h5>
+         </div>
+     </section>
+ </script>
 
   <script id="template-cart-product" type="text/x-handlebars-template">
     <li>
@@ -242,6 +345,7 @@
    </div>
  </script>
 
+  <script src="vendor/flickity.pkgd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="vendor/range-slider.min.js"></script>

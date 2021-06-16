@@ -3,12 +3,14 @@ export const select = {
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product',
     bookingWidget: '#template-booking-widget',
+    homePage: '#template-home-page' ,
   },
   containerOf: {
     menu: '#product-list',
     cart: '#cart',
     pages: '#pages',
     booking: '.booking-wrapper',
+    home: '.home-wrapper',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -90,6 +92,12 @@ export const classNames = {
   },
   pages: {
     active: 'active',
+  },
+  home: {
+    btnClass:'box btn ',
+    btn: '[class*="box btn"]',
+    firstImg: 'box btn order',
+    secondImg: 'box btn booking',
   }
 };
 
@@ -113,7 +121,7 @@ export const settings = {
     tableIdAttribute: 'data-table',
   },
   db: {
-    url: '//localhost:3131',
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
     products: 'product',
     orders: 'orders',
     bookings: 'bookings',
@@ -123,10 +131,23 @@ export const settings = {
     notRepeatParam: 'repeat=false',
     repeatParam: 'repeat_ne=false',
   },
+  images: {
+    galeryimage1: { src: '../../images/assets/pizza-4.jpg'},
+    galeryimage2: { src: '../../../images/assets/pizza-5.jpg'},
+    galeryimage3: { src: '../../../images/assets/pizza-6.jpg'},
+    galeryimage4: { src: '../../../images/assets/pizza-7.jpg'},
+    galeryimage5: { src: '../../../images/assets/pizza-8.jpg'},
+    galeryimage6: { src: '../../../images/assets/pizza-9.jpg'}
+  }
+
+
+
+
 };
 
 export const templates = {
   menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
+  homePage: Handlebars.compile(document.querySelector(select.templateOf.homePage).innerHTML),
 };

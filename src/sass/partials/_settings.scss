@@ -20,6 +20,10 @@ $radius: 4px;
 
 $base-size: 12px;
 
+
+$firstImg: url("../../../images/assets/pizza-1.jpg");
+$secondImg: url("../../../images/assets/pizza-2.jpg");
+
 /* Mixins */
 
 @mixin btn($btn-bg, $btn-text, $btn-border) {

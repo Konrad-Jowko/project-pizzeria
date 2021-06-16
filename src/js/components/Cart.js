@@ -61,8 +61,6 @@ class Cart{
     payload.deliveryFee = settings.cart.defaultDeliveryFee;
     payload.products = [];
 
-    console.log(payload);
-
     for(let prod of thisCart.products) {
 
       payload.products.push(prod.getData());

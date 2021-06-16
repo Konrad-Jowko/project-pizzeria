@@ -211,7 +211,6 @@ class Booking {
         payload.starters.push(starter.value);
       }
     }
-    console.log(payload);
 
     const options = {
       method: 'POST',
@@ -221,12 +220,9 @@ class Booking {
       body: JSON.stringify(payload),
     };
 
-    console.log(thisBooking.booked);
-
     fetch(url, options)
       .then(thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table));
 
-    console.log(thisBooking.booked);
     thisBooking.dom.bookingForm.reset();
     thisBooking.tableReset();
   }
