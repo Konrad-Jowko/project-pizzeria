@@ -76,6 +76,16 @@ class Cart{
 
     fetch(url, options);
 
+    thisCart.totalPrice.innerHTML = '$'+0;
+    thisCart.dom.deliveryFee.innerHTML = '$'+0;
+    thisCart.dom.subTotalPrice.innerHTML = '$'+0;
+    thisCart.dom.totalPrice.innerHTML = '$'+0;
+    thisCart.dom.cartTotalPrice.innerHTML = '$'+0;
+    thisCart.dom.totalNumber.innerHTML = '$'+0;
+    thisCart.dom.productList.innerHTML = '';
+
+    thisCart.update();
+
 
   }
 
